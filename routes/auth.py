@@ -27,7 +27,7 @@ async def signup(user: User):
     user_dict = user.model_dump()
 
     # Assigning a short 6-character string ID instead of ObjectID
-    user_dict["_id"] = shortuuid.uuid()[:6]
+    user_dict["userId"] = shortuuid.uuid()[:6]
     
     # hashing the password
     user_dict["password"] = hash_password(user_dict["password"])
